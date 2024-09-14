@@ -1,0 +1,9 @@
+body {
+    cursor: url('cursor.png'), auto;
+}
+
+.trail {
+    position: absolute;
+    height: 16px; width: 16px;
+    background-image: url("cursor.png");
+  }
