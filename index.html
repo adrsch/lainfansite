@@ -5,10 +5,37 @@
         <link rel="stylesheet" href="style.css">
     </head>
 <body>
-    <p>ERROR 03. NO PSYCHE DETECTED. PLEASE CHECK CONNECTION.</p>
-    <p>For help installing your Pysche chip please contact PHANTOMa "PK King" Taro#218.</p>
-    <p>(c) 1998 Knights of the Eastern Calculus. Let's All Love Lain.</p>
-    
+    <p id="animated0">ERROR 03. NO PSYCHE DETECTED. PLEASE CHECK CONNECTION.</p>
+    <p id="animated1">For help installing your Pysche chip please contact PHANTOMa "PK King" Taro#218.</p>
+    <p id="animated2">(c) 1998 Knights of the Eastern Calculus</p>
+
+    <script>
+        //https://codepen.io/zachkrall/pen/MWWGMPx
+        function updateText(elId, delay){
+
+	let h1 = document.getElementById(elId);
+    let text = h1.innerHTML;
+
+      h1.innerHTML = text
+        .split("")
+        .map(letter => {
+          console.log(letter);
+          return `<span>` + letter + `</span>`;
+        })
+        .join("");
+
+      Array.from(h1.children).forEach((span, index) => {
+        setTimeout(() => {
+          span.classList.add("wavy");
+        }, index * 60 + delay);
+      });
+
+}
+updateText("animated0", 200);
+updateText("animated1", 300);
+updateText("animated2", 400);
+    </script>
+
     <script>
         //https://codepen.io/falldowngoboone/pen/PwzPYv
         // dots is an array of Dot objects,
@@ -33,9 +60,10 @@ return n;
 };
 // The Dot.prototype.draw() method sets the position of 
 // the object's <div> node
-Dot.prototype.draw = function() {
+Dot.prototype.draw = function(opacity) {
 this.node.style.left = this.x + "px";
 this.node.style.top = this.y + "px";
+this.node.style.opacity = opacity;
 };
 
 // Creates the Dot objects, populates the dots array
@@ -55,9 +83,11 @@ var x = mouse.x,
 dots.forEach(function(dot, index, dots) {
 var nextDot = dots[index + 1] || dots[0];
 
+var opacity = 0.3 * (1 - index / 12);
+
 dot.x = x;
 dot.y = y;
-dot.draw();
+dot.draw(opacity);
 x += (nextDot.x - dot.x) * .6;
 y += (nextDot.y - dot.y) * .6;
 

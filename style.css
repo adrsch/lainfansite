@@ -7,3 +7,36 @@ body {
     height: 16px; width: 16px;
     background-image: url("cursor.png");
   }
+  
+.wavy {
+    animation-name: wavy;
+    animation-duration: 5s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+  @keyframes wavy {
+    0% {
+      top: 0px;
+      left: 0px;
+    }
+    25%{
+        left: 2px;
+    }
+    50% {
+      top: -4px;
+    }
+    55%{
+        left: 0px;
+    }
+    80%
+    {
+        left: -2px;
+    }
+    100% {
+      top: 0px;
+      left: 0px;
+    }
+  }
