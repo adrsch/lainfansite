@@ -1,12 +1,33 @@
 body {
     cursor: url('cursor.png'), auto;
+    background: no-repeat url('bghidden.png');
+    background-size: cover;
 }
 
 .trail {
     position: absolute;
     height: 16px; width: 16px;
     background-image: url("cursor.png");
-  }
+}
+
+/*
+.content {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background: no-repeat url('knights.png');
+    background-position: center;
+    background-size: 300px;
+}
+
+.knights {
+    background: no-repeat url('knightstransparency.png');
+    background-position: left;
+    background-size: 300px;
+    min-height: 300px;
+    padding-top: 300px;
+}
+*/
   
 .wavy {
     animation-name: wavy;
