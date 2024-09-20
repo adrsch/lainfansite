@@ -5,7 +5,7 @@ html {
 
 body {
     cursor: url('cursor.png'), auto;
-    background: url('bghidden.png')  no-repeat center center fixed;
+    background: url('bghidden.png')  no-repeat top center fixed;
     background-size: cover;
 }
 
