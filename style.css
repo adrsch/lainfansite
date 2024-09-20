@@ -1,6 +1,11 @@
+html {
+    height: 100%;
+    overflow: hidden;
+  }
+
 body {
     cursor: url('cursor.png'), auto;
-    background: no-repeat url('bghidden.png');
+    background: url('bghidden.png')  no-repeat center center fixed;
     background-size: cover;
 }
 
